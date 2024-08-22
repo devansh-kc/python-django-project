@@ -1,11 +1,10 @@
 from django.urls import path
 from django.shortcuts import render
-from . import views
+from .views  import tweet_list, tweet_create, tweet_delete, tweet_edit
 
 urlpatterns = [
-    # path("",views.gtaIV, name="GtaIv"),
-    path("", views.tweet_list, name="tweet_list"),
-    path("create/", views.tweet_create, name="tweet_create"),
-    path("<int:tweet_id>/edit/", views.tweet_edit, name="tweet_edit"),
-    path("<int:tweet_id>/delete/", views.tweet_delete, name="tweet_delete"),
+    path("", tweet_list, name="tweet_list"),
+    path("create/", tweet_create, name="tweet_create"),
+    path("<int:tweet_id>/edit/", tweet_edit, name="tweet_edit"),
+    path("<int:tweet_id>/delete/", tweet_delete, name="tweet_delete"),
 ]

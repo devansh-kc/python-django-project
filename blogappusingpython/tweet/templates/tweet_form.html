@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block title %}Chai aur Tweet{% endblock %} 
+{% block content %}
+<div class="container justify-center align-middle flex flex-col m-4 p-4">
+  <h1 class="text-center mt-4 text-white text-4xl m-4 p-4">
+    X Clone project using django
+  </h1>
+  <h2 class="text-white text-center ">
+    {% if form.instance.pk %} Edit Tweet {% else %} create tweet {% endif %}
+  </h2>
+  <form method="post" enctype="multipart/form-data" class=" ">
+    {% csrf_token %}
+    {{form}}
+    <button class="bg-white text-black m-2 p-2 rounded">Submit</button>
+  </form>
+  <a class="text-white" href="{% url "tweet_list" %}">Back to tweet List    </a>
+</div>
+{% endblock %}
