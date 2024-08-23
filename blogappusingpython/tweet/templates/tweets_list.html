@@ -1,15 +1,18 @@
 {% extends "layout.html" %}
 {% block title %} Creat Post {% endblock %} 
 {% block content %}
-<div class="flex">
-  <h1 class="justify-center text-center">Creat Post</h1>
-  <a href="{% url "tweet_create" %}"> create a post </a>
+<div class="flex m-4 p-2">
+    <h1 class="justify-center text-center">Creat Post</h1>
+    <div>
+
+        <a class ="m-4 p-2 bg-white border rounded text-black"href="{% url "tweet_create" %}"> create a post </a>
+    </div>
 
   {% for tweet  in tweets %}
   
   
   <div class="max-w-sm bg-white border border-gray-200 m-2 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  
+
     <a href="#">
         <img class="rounded-t-lg" src="{{tweet.photo.url}}" alt="{{tweet.text}}" />
     </a>
