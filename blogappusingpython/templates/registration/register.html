@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block content %}
+<div class="bg-white text-black flex justify-center  align-middle m-2 p-2 flex-row">
+    
+    <form method="post"class=" " >
+        {% csrf_token %} {{form.as_p}}
+        <button class="p-2 m-2 border rounded bg-black text-white ">register</button>
+        
+    </form>
+    <p >already a member <a href="{% url "login" %}"> Login</a></p>
+</div>
+
+{% endblock %}
